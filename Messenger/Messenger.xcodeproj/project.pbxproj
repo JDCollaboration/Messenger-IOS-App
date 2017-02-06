@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		513B11871E48C8E10025A308 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B11861E48C8E10025A308 /* AppDelegate.swift */; };
-		513B11891E48C8E10025A308 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B11881E48C8E10025A308 /* ViewController.swift */; };
+		513B11891E48C8E10025A308 /* MasterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B11881E48C8E10025A308 /* MasterVC.swift */; };
 		513B118C1E48C8E10025A308 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 513B118A1E48C8E10025A308 /* Main.storyboard */; };
 		513B118F1E48C8E10025A308 /* Messenger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 513B118D1E48C8E10025A308 /* Messenger.xcdatamodeld */; };
 		513B11911E48C8E10025A308 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 513B11901E48C8E10025A308 /* Assets.xcassets */; };
@@ -29,7 +29,7 @@
 /* Begin PBXFileReference section */
 		513B11831E48C8E10025A308 /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		513B11861E48C8E10025A308 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		513B11881E48C8E10025A308 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		513B11881E48C8E10025A308 /* MasterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterVC.swift; sourceTree = "<group>"; };
 		513B118B1E48C8E10025A308 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		513B118E1E48C8E10025A308 /* Messenger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Messenger.xcdatamodel; sourceTree = "<group>"; };
 		513B11901E48C8E10025A308 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -79,13 +79,15 @@
 		513B11851E48C8E10025A308 /* Messenger */ = {
 			isa = PBXGroup;
 			children = (
-				513B11861E48C8E10025A308 /* AppDelegate.swift */,
-				513B11881E48C8E10025A308 /* ViewController.swift */,
+				513B11AD1E48D5150025A308 /* Media */,
+				513B11AC1E48D4FA0025A308 /* CoreData */,
+				513B11A91E48D3940025A308 /* View */,
+				513B11AB1E48D3A60025A308 /* Controller */,
+				513B11AA1E48D39A0025A308 /* Model */,
 				513B118A1E48C8E10025A308 /* Main.storyboard */,
-				513B11901E48C8E10025A308 /* Assets.xcassets */,
+				513B11861E48C8E10025A308 /* AppDelegate.swift */,
 				513B11921E48C8E10025A308 /* LaunchScreen.storyboard */,
 				513B11951E48C8E20025A308 /* Info.plist */,
-				513B118D1E48C8E10025A308 /* Messenger.xcdatamodeld */,
 			);
 			path = Messenger;
 			sourceTree = "<group>";
@@ -97,6 +99,44 @@
 				513B11A01E48C8E20025A308 /* Info.plist */,
 			);
 			path = MessengerTests;
+			sourceTree = "<group>";
+		};
+		513B11A91E48D3940025A308 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		513B11AA1E48D39A0025A308 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		513B11AB1E48D3A60025A308 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				513B11881E48C8E10025A308 /* MasterVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		513B11AC1E48D4FA0025A308 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				513B118D1E48C8E10025A308 /* Messenger.xcdatamodeld */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		513B11AD1E48D5150025A308 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				513B11901E48C8E10025A308 /* Assets.xcassets */,
+			);
+			name = Media;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,7 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				513B11891E48C8E10025A308 /* ViewController.swift in Sources */,
+				513B11891E48C8E10025A308 /* MasterVC.swift in Sources */,
 				513B11871E48C8E10025A308 /* AppDelegate.swift in Sources */,
 				513B118F1E48C8E10025A308 /* Messenger.xcdatamodeld in Sources */,
 			);
