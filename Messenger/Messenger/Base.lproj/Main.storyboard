@@ -26,13 +26,32 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="ZE1-ff-OZG">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ConversationCell" rowHeight="90" id="ZE1-ff-OZG" customClass="ConversationCell" customModule="Messenger" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZE1-ff-OZG" id="wEm-oX-3q7">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friend Name Here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2m5-5B-vaN">
+                                                    <rect key="frame" x="8" y="8" width="359" height="73"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="73" id="Dhb-RN-D4p"/>
+                                                        <constraint firstAttribute="width" constant="359" id="sJe-iR-Rgs"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="2m5-5B-vaN" firstAttribute="centerX" secondItem="wEm-oX-3q7" secondAttribute="centerX" id="Tc6-Uj-915"/>
+                                                <constraint firstItem="2m5-5B-vaN" firstAttribute="centerY" secondItem="wEm-oX-3q7" secondAttribute="centerY" id="zUO-Wp-KVC"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="2m5-5B-vaN" id="IKp-MN-jfq"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -83,6 +102,9 @@
                         </view>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ofc-RT-Q14"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="1PG-Fy-OSV" id="Q94-wC-EHZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

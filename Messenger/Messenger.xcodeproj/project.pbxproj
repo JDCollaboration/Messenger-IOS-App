@@ -14,6 +14,7 @@
 		513B11911E48C8E10025A308 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 513B11901E48C8E10025A308 /* Assets.xcassets */; };
 		513B11941E48C8E20025A308 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 513B11921E48C8E10025A308 /* LaunchScreen.storyboard */; };
 		513B119F1E48C8E20025A308 /* MessengerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B119E1E48C8E20025A308 /* MessengerTests.swift */; };
+		513B11AF1E48E6870025A308 /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B11AE1E48E6870025A308 /* ConversationCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		513B119A1E48C8E20025A308 /* MessengerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MessengerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		513B119E1E48C8E20025A308 /* MessengerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerTests.swift; sourceTree = "<group>"; };
 		513B11A01E48C8E20025A308 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		513B11AE1E48E6870025A308 /* ConversationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		513B11A91E48D3940025A308 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				513B11AE1E48E6870025A308 /* ConversationCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				513B11AF1E48E6870025A308 /* ConversationCell.swift in Sources */,
 				513B11891E48C8E10025A308 /* MasterVC.swift in Sources */,
 				513B11871E48C8E10025A308 /* AppDelegate.swift in Sources */,
 				513B118F1E48C8E10025A308 /* Messenger.xcdatamodeld in Sources */,
@@ -456,6 +460,7 @@
 				513B11A51E48C8E20025A308 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		513B11A61E48C8E20025A308 /* Build configuration list for PBXNativeTarget "MessengerTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +469,7 @@
 				513B11A81E48C8E20025A308 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
