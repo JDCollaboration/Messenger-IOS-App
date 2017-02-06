@@ -15,6 +15,7 @@
 		513B11941E48C8E20025A308 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 513B11921E48C8E10025A308 /* LaunchScreen.storyboard */; };
 		513B119F1E48C8E20025A308 /* MessengerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B119E1E48C8E20025A308 /* MessengerTests.swift */; };
 		513B11AF1E48E6870025A308 /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B11AE1E48E6870025A308 /* ConversationCell.swift */; };
+		513B11B11E48EED70025A308 /* ConversationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B11B01E48EED70025A308 /* ConversationVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		513B119E1E48C8E20025A308 /* MessengerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerTests.swift; sourceTree = "<group>"; };
 		513B11A01E48C8E20025A308 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		513B11AE1E48E6870025A308 /* ConversationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
+		513B11B01E48EED70025A308 /* ConversationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				513B11881E48C8E10025A308 /* MasterVC.swift */,
+				513B11B01E48EED70025A308 /* ConversationVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				513B11AF1E48E6870025A308 /* ConversationCell.swift in Sources */,
 				513B11891E48C8E10025A308 /* MasterVC.swift in Sources */,
 				513B11871E48C8E10025A308 /* AppDelegate.swift in Sources */,
+				513B11B11E48EED70025A308 /* ConversationVC.swift in Sources */,
 				513B118F1E48C8E10025A308 /* Messenger.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

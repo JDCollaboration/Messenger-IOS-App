@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -34,11 +35,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friend Name Here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2m5-5B-vaN">
-                                                    <rect key="frame" x="8" y="8" width="359" height="73"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="73" id="Dhb-RN-D4p"/>
-                                                        <constraint firstAttribute="width" constant="359" id="sJe-iR-Rgs"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="16" y="31" width="343" height="28"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -46,6 +43,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="2m5-5B-vaN" firstAttribute="centerX" secondItem="wEm-oX-3q7" secondAttribute="centerX" id="Tc6-Uj-915"/>
+                                                <constraint firstItem="2m5-5B-vaN" firstAttribute="leading" secondItem="wEm-oX-3q7" secondAttribute="leadingMargin" constant="8" id="x6F-Oc-q8j"/>
                                                 <constraint firstItem="2m5-5B-vaN" firstAttribute="centerY" secondItem="wEm-oX-3q7" secondAttribute="centerY" id="zUO-Wp-KVC"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -92,7 +90,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="pl8-TG-67j" secondAttribute="bottom" id="PW3-tu-eMz"/>
                                 <constraint firstItem="pl8-TG-67j" firstAttribute="top" secondItem="2gs-cg-Qbs" secondAttribute="top" id="crZ-65-i4R"/>
@@ -103,12 +101,74 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ofc-RT-Q14"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="tabBar" destination="PeJ-hq-gR2" id="RPh-nz-Vdz"/>
                         <outlet property="tableView" destination="1PG-Fy-OSV" id="Q94-wC-EHZ"/>
+                        <segue destination="AMO-ZT-pfa" kind="show" identifier="ConversationVC" id="CEU-WM-wPi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="928.79999999999995" y="-645.42728635682158"/>
+        </scene>
+        <!--ConversationVC-->
+        <scene sceneID="T61-Kn-dfe">
+            <objects>
+                <viewController id="AMO-ZT-pfa" customClass="ConversationVC" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="93r-82-dw0"/>
+                        <viewControllerLayoutGuide type="bottom" id="J5l-7O-1uC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hUK-6c-ZBB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friend Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BhZ-pc-GbH">
+                                <rect key="frame" x="62.5" y="313.5" width="250" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="Epc-sa-gyK"/>
+                                    <constraint firstAttribute="height" constant="40" id="ZzT-XG-kne"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BhZ-pc-GbH" firstAttribute="centerX" secondItem="hUK-6c-ZBB" secondAttribute="centerX" id="UfH-Y9-Pxo"/>
+                            <constraint firstItem="BhZ-pc-GbH" firstAttribute="centerY" secondItem="hUK-6c-ZBB" secondAttribute="centerY" id="d6c-2T-uUh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="CJH-wP-VZr">
+                        <nil key="title"/>
+                        <view key="titleView" contentMode="scaleToFill" id="hQE-w6-1xz">
+                            <rect key="frame" x="78" y="6" width="220" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friend Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUC-0N-vDU">
+                                    <rect key="frame" x="0.0" y="0.0" width="220" height="33"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                                    <color key="textColor" red="0.054901960780000002" green="0.47843137250000001" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="FUC-0N-vDU" firstAttribute="top" secondItem="hQE-w6-1xz" secondAttribute="top" id="2Wc-VB-XAU"/>
+                                <constraint firstAttribute="trailing" secondItem="FUC-0N-vDU" secondAttribute="trailing" id="7pH-IW-puV"/>
+                                <constraint firstItem="FUC-0N-vDU" firstAttribute="leading" secondItem="hQE-w6-1xz" secondAttribute="leading" id="8Yj-Is-cVV"/>
+                                <constraint firstAttribute="bottom" secondItem="FUC-0N-vDU" secondAttribute="bottom" id="Gqa-kC-WIh"/>
+                            </constraints>
+                        </view>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nameLabel" destination="BhZ-pc-GbH" id="cfp-3E-MND"/>
+                        <outlet property="titleLabel" destination="FUC-0N-vDU" id="uu6-b2-aJG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oRm-5D-5Dz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1892" y="-645.42728635682158"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Xkj-VU-XdA">
