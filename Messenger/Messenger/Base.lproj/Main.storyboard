@@ -27,7 +27,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ConversationCell" rowHeight="90" id="ZE1-ff-OZG" customClass="ConversationCell" customModule="Messenger" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ConversationCell" rowHeight="90" id="ZE1-ff-OZG" customClass="ConversationCell" customModule="Messenger" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZE1-ff-OZG" id="wEm-oX-3q7">
@@ -78,7 +78,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="a1n-nq-Lfj">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="Sjn-2P-hJe"/>
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="Sjn-2P-hJe">
+                            <connections>
+                                <action selector="editButtonPressed:" destination="BYZ-38-t0r" id="iNT-4E-L2j"/>
+                            </connections>
+                        </barButtonItem>
                         <view key="titleView" contentMode="scaleToFill" id="2gs-cg-Qbs">
                             <rect key="frame" x="113" y="6" width="150" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -98,9 +102,14 @@
                                 <constraint firstAttribute="trailing" secondItem="pl8-TG-67j" secondAttribute="trailing" id="mnj-dJ-5oQ"/>
                             </constraints>
                         </view>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ofc-RT-Q14"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ofc-RT-Q14">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="BYZ-38-t0r" id="u1n-HC-FjT"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="editButton" destination="Sjn-2P-hJe" id="Bmx-lL-dgX"/>
                         <outlet property="tabBar" destination="PeJ-hq-gR2" id="RPh-nz-Vdz"/>
                         <outlet property="tableView" destination="1PG-Fy-OSV" id="Q94-wC-EHZ"/>
                         <segue destination="AMO-ZT-pfa" kind="show" identifier="ConversationVC" id="CEU-WM-wPi"/>
