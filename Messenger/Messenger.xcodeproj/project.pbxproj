@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5134FF521E4B827A00750AD7 /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5134FF511E4B827A00750AD7 /* RoundedTextField.swift */; };
 		513B11871E48C8E10025A308 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B11861E48C8E10025A308 /* AppDelegate.swift */; };
 		513B11891E48C8E10025A308 /* MasterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B11881E48C8E10025A308 /* MasterVC.swift */; };
 		513B118C1E48C8E10025A308 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 513B118A1E48C8E10025A308 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5134FF511E4B827A00750AD7 /* RoundedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
 		513B11831E48C8E10025A308 /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		513B11861E48C8E10025A308 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		513B11881E48C8E10025A308 /* MasterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterVC.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				513B11AE1E48E6870025A308 /* ConversationCell.swift */,
+				5134FF511E4B827A00750AD7 /* RoundedTextField.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				513B11AF1E48E6870025A308 /* ConversationCell.swift in Sources */,
+				5134FF521E4B827A00750AD7 /* RoundedTextField.swift in Sources */,
 				513B11891E48C8E10025A308 /* MasterVC.swift in Sources */,
 				513B11871E48C8E10025A308 /* AppDelegate.swift in Sources */,
 				513B11B11E48EED70025A308 /* ConversationVC.swift in Sources */,
