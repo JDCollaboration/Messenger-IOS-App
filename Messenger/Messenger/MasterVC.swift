@@ -94,10 +94,10 @@ class MasterVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NS
         
         if let objs = controller.fetchedObjects, objs.count > 0 {
             
-            if let contactName = objs[indexPath.row].name {
+            let contact = objs[indexPath.row]
                 
-                performSegue(withIdentifier: "ConversationVC", sender: contactName)
-            }
+            performSegue(withIdentifier: "ConversationVC", sender: contact)
+
         }
     }
     
@@ -129,8 +129,8 @@ class MasterVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NS
             
             if let conversationVC = segue.destination as? ConversationVC {
                 
-                if let name = sender as? String {
-                    conversationVC.name = name
+                if let contact = sender as? Contact {
+                    conversationVC.contact = contact
                 }
                 
             }
