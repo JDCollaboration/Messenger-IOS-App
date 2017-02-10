@@ -148,7 +148,9 @@
                                             <constraint firstAttribute="width" constant="50" id="brD-1d-5de"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="Send"/>
+                                        <state key="normal" title="Send">
+                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -164,16 +166,42 @@
                                     <constraint firstItem="3lb-Ns-Ftx" firstAttribute="top" secondItem="sCI-ut-bbH" secondAttribute="top" id="tv5-qX-ECq"/>
                                 </constraints>
                             </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rpx-TT-A0H">
+                                <rect key="frame" x="0.0" y="64" width="320" height="444"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ud4-hr-toP">
+                                    <size key="itemSize" width="320" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MessageCell" id="nbe-g6-0Bt" customClass="MessageCell" customModule="Messenger" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="10" width="320" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="rpx-TT-A0H" secondAttribute="trailing" id="72J-j3-KHF"/>
+                            <constraint firstItem="rpx-TT-A0H" firstAttribute="leading" secondItem="hUK-6c-ZBB" secondAttribute="leading" id="9Oc-rK-xJV"/>
                             <constraint firstItem="sCI-ut-bbH" firstAttribute="leading" secondItem="hUK-6c-ZBB" secondAttribute="leading" id="9eC-su-hw4"/>
                             <constraint firstAttribute="trailing" secondItem="sCI-ut-bbH" secondAttribute="trailing" id="EUY-PZ-Uwn"/>
+                            <constraint firstItem="rpx-TT-A0H" firstAttribute="top" secondItem="93r-82-dw0" secondAttribute="bottom" id="bRQ-o2-yzw"/>
                             <constraint firstItem="J5l-7O-1uC" firstAttribute="top" secondItem="sCI-ut-bbH" secondAttribute="bottom" id="jCg-dv-DA8"/>
+                            <constraint firstItem="sCI-ut-bbH" firstAttribute="top" secondItem="rpx-TT-A0H" secondAttribute="bottom" id="v31-Ih-g3x"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="CJH-wP-VZr"/>
                     <connections>
+                        <outlet property="collectionView" destination="rpx-TT-A0H" id="fos-Qb-PsC"/>
                         <outlet property="textViewBottomLayoutConstraint" destination="jCg-dv-DA8" id="QX8-gy-pj9"/>
                     </connections>
                 </viewController>
