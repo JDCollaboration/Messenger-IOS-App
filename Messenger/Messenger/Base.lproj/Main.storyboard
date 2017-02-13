@@ -10,6 +10,72 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Add ContactVC-->
+        <scene sceneID="i84-94-WR4">
+            <objects>
+                <viewController id="dHe-W1-0Ri" customClass="AddContactVC" customModule="Messenger" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7wK-5n-A0h"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jmi-ZU-wK3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ps0-hY-jNa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mZM-8I-8l6">
+                                <rect key="frame" x="16" y="503" width="288" height="45"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2A-Eb-xAS">
+                                        <rect key="frame" x="0.0" y="0.0" width="134" height="45"/>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelButtonPressed:" destination="dHe-W1-0Ri" eventType="touchUpInside" id="I70-x7-rbI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F7G-RD-ikR">
+                                        <rect key="frame" x="154" y="0.0" width="134" height="45"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Add"/>
+                                        <connections>
+                                            <action selector="addButtonPressed:" destination="dHe-W1-0Ri" eventType="touchUpInside" id="avY-0B-w9D"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="sVk-o1-7GF"/>
+                                </constraints>
+                            </stackView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Contact Name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0jZ-xF-qLm">
+                                <rect key="frame" x="16" y="60" width="288" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Svn-w2-Yws"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0jZ-xF-qLm" firstAttribute="top" secondItem="7wK-5n-A0h" secondAttribute="bottom" constant="40" id="0Kq-Ic-EQO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mZM-8I-8l6" secondAttribute="trailing" id="178-9C-uRS"/>
+                            <constraint firstItem="mZM-8I-8l6" firstAttribute="leading" secondItem="ps0-hY-jNa" secondAttribute="leadingMargin" id="AvL-kI-G0t"/>
+                            <constraint firstItem="0jZ-xF-qLm" firstAttribute="leading" secondItem="ps0-hY-jNa" secondAttribute="leadingMargin" id="H2A-4r-clQ"/>
+                            <constraint firstItem="Jmi-ZU-wK3" firstAttribute="top" secondItem="mZM-8I-8l6" secondAttribute="bottom" constant="20" id="SSS-RF-QKK"/>
+                            <constraint firstItem="0jZ-xF-qLm" firstAttribute="trailing" secondItem="ps0-hY-jNa" secondAttribute="trailingMargin" id="Uxm-wK-AkO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contactName" destination="0jZ-xF-qLm" id="sbz-or-8ZX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eAe-sg-Z81" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1891.875" y="-1454.5774647887324"/>
+        </scene>
         <!--Conversations-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -96,6 +162,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ofc-RT-Q14">
                             <connections>
                                 <action selector="addButtonPressed:" destination="BYZ-38-t0r" id="u1n-HC-FjT"/>
+                                <segue destination="dHe-W1-0Ri" kind="presentation" id="0mi-sc-jAS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

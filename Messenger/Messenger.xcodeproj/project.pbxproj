@@ -10,6 +10,7 @@
 		5134FF521E4B827A00750AD7 /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5134FF511E4B827A00750AD7 /* RoundedTextField.swift */; };
 		5134FF541E4BF44100750AD7 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5134FF531E4BF44100750AD7 /* MessageCell.swift */; };
 		5134FF561E4BFD9800750AD7 /* TestMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5134FF551E4BFD9800750AD7 /* TestMessage.swift */; };
+		5134FF581E51F7D500750AD7 /* AddContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5134FF571E51F7D500750AD7 /* AddContactVC.swift */; };
 		513B11871E48C8E10025A308 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B11861E48C8E10025A308 /* AppDelegate.swift */; };
 		513B11891E48C8E10025A308 /* MasterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B11881E48C8E10025A308 /* MasterVC.swift */; };
 		513B118C1E48C8E10025A308 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 513B118A1E48C8E10025A308 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 		5134FF511E4B827A00750AD7 /* RoundedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
 		5134FF531E4BF44100750AD7 /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		5134FF551E4BFD9800750AD7 /* TestMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestMessage.swift; sourceTree = "<group>"; };
+		5134FF571E51F7D500750AD7 /* AddContactVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactVC.swift; sourceTree = "<group>"; };
 		513B11831E48C8E10025A308 /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		513B11861E48C8E10025A308 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		513B11881E48C8E10025A308 /* MasterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterVC.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			children = (
 				513B11881E48C8E10025A308 /* MasterVC.swift */,
 				513B11B01E48EED70025A308 /* ConversationVC.swift */,
+				5134FF571E51F7D500750AD7 /* AddContactVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				513B11AF1E48E6870025A308 /* ConversationCell.swift in Sources */,
+				5134FF581E51F7D500750AD7 /* AddContactVC.swift in Sources */,
 				5134FF561E4BFD9800750AD7 /* TestMessage.swift in Sources */,
 				5134FF521E4B827A00750AD7 /* RoundedTextField.swift in Sources */,
 				513B11891E48C8E10025A308 /* MasterVC.swift in Sources */,
