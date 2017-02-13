@@ -35,14 +35,14 @@ class MasterVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NS
     //But for now it just adds Bob Dole 👍
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         
-        let newContact = Contact(context: context)
+        /*let newContact = Contact(context: context)
         newContact.name = "Bob Dole"
         
         do {
             try context.save()
         } catch let err as NSError {
             print(err.debugDescription)
-        }
+        }*/
     }
     
     @IBAction func editButtonPressed(_ sender: UIBarButtonItem) {
