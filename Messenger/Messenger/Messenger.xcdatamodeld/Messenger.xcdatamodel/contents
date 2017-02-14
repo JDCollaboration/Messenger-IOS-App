@@ -5,13 +5,13 @@
         <relationship name="messages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Message" inverseName="contact" inverseEntity="Message" syncable="YES"/>
     </entity>
     <entity name="Message" representedClassName="Message" syncable="YES" codeGenerationType="class">
+        <attribute name="isSending" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="message" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="sentByMe" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="contact" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contact" inverseName="messages" inverseEntity="Contact" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Contact" positionX="-63" positionY="-18" width="128" height="73"/>
-        <element name="Message" positionX="153" positionY="63" width="128" height="103"/>
+        <element name="Contact" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="Message" positionX="153" positionY="63" width="128" height="105"/>
     </elements>
 </model>

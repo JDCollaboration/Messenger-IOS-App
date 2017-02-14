@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5134FF521E4B827A00750AD7 /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5134FF511E4B827A00750AD7 /* RoundedTextField.swift */; };
 		5134FF541E4BF44100750AD7 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5134FF531E4BF44100750AD7 /* MessageCell.swift */; };
-		5134FF561E4BFD9800750AD7 /* TestMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5134FF551E4BFD9800750AD7 /* TestMessage.swift */; };
 		5134FF581E51F7D500750AD7 /* AddContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5134FF571E51F7D500750AD7 /* AddContactVC.swift */; };
 		513B11871E48C8E10025A308 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B11861E48C8E10025A308 /* AppDelegate.swift */; };
 		513B11891E48C8E10025A308 /* MasterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B11881E48C8E10025A308 /* MasterVC.swift */; };
@@ -20,6 +19,8 @@
 		513B119F1E48C8E20025A308 /* MessengerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B119E1E48C8E20025A308 /* MessengerTests.swift */; };
 		513B11AF1E48E6870025A308 /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B11AE1E48E6870025A308 /* ConversationCell.swift */; };
 		513B11B11E48EED70025A308 /* ConversationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B11B01E48EED70025A308 /* ConversationVC.swift */; };
+		51AC49921E523E12005FF2A6 /* ContactManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AC49911E523E12005FF2A6 /* ContactManager.swift */; };
+		51AC49941E525B25005FF2A6 /* MessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AC49931E525B25005FF2A6 /* MessageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +36,6 @@
 /* Begin PBXFileReference section */
 		5134FF511E4B827A00750AD7 /* RoundedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
 		5134FF531E4BF44100750AD7 /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
-		5134FF551E4BFD9800750AD7 /* TestMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestMessage.swift; sourceTree = "<group>"; };
 		5134FF571E51F7D500750AD7 /* AddContactVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactVC.swift; sourceTree = "<group>"; };
 		513B11831E48C8E10025A308 /* Messenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		513B11861E48C8E10025A308 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +50,8 @@
 		513B11A01E48C8E20025A308 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		513B11AE1E48E6870025A308 /* ConversationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
 		513B11B01E48EED70025A308 /* ConversationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationVC.swift; sourceTree = "<group>"; };
+		51AC49911E523E12005FF2A6 /* ContactManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactManager.swift; sourceTree = "<group>"; };
+		51AC49931E525B25005FF2A6 /* MessageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +128,8 @@
 		513B11AA1E48D39A0025A308 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5134FF551E4BFD9800750AD7 /* TestMessage.swift */,
+				51AC49911E523E12005FF2A6 /* ContactManager.swift */,
+				51AC49931E525B25005FF2A6 /* MessageManager.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -264,12 +267,13 @@
 			files = (
 				513B11AF1E48E6870025A308 /* ConversationCell.swift in Sources */,
 				5134FF581E51F7D500750AD7 /* AddContactVC.swift in Sources */,
-				5134FF561E4BFD9800750AD7 /* TestMessage.swift in Sources */,
 				5134FF521E4B827A00750AD7 /* RoundedTextField.swift in Sources */,
 				513B11891E48C8E10025A308 /* MasterVC.swift in Sources */,
 				513B11871E48C8E10025A308 /* AppDelegate.swift in Sources */,
 				513B11B11E48EED70025A308 /* ConversationVC.swift in Sources */,
 				513B118F1E48C8E10025A308 /* Messenger.xcdatamodeld in Sources */,
+				51AC49941E525B25005FF2A6 /* MessageManager.swift in Sources */,
+				51AC49921E523E12005FF2A6 /* ContactManager.swift in Sources */,
 				5134FF541E4BF44100750AD7 /* MessageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
