@@ -7,16 +7,18 @@
 //
 
 import UIKit
+import CoreData
 
 class ConversationVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    @IBOutlet weak var messageTextField: RoundedTextField!
     
     //needed to animate the text field and send button when the keyboard shows or hides
     @IBOutlet weak var textViewBottomLayoutConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private var messages = [TestMessage]()
-    
+    var messageManager: MessageManager!
     var contact: Contact!
     
     private let messageFont = UIFont.systemFont(ofSize: 18)
@@ -32,13 +34,13 @@ class ConversationVC: UIViewController, UICollectionViewDelegate, UICollectionVi
         //needed to maintain bottom inset after repositioning the collectionView
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
         
-        populateMessages()
+        messageManager = MessageManager(contact: contact)
         
         setKeyboardObservers()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        repositionCollectionView()
+        repositionCollectionView(animated: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -52,7 +54,7 @@ class ConversationVC: UIViewController, UICollectionViewDelegate, UICollectionVi
         view.endEditing(true)
         
         collectionView.reloadData {
-            self.repositionCollectionView()
+            self.repositionCollectionView(animated: true)
         }
         
     }
@@ -74,11 +76,38 @@ class ConversationVC: UIViewController, UICollectionViewDelegate, UICollectionVi
                 
             }, completion: { (completed) in
             
-                self.repositionCollectionView()
+                self.repositionCollectionView(animated: true)
             
             })
         }
     }
+    
+    //MARK: - IBActions
+    
+    @IBAction func sendButtonPressed(_ sender: UIButton) {
+        
+        if let messageToSend = messageTextField.text, messageToSend != "" {
+            
+            messageManager.sendMessage(message: messageToSend, isSending: true)
+            
+            collectionView.reloadData {
+                self.repositionCollectionView(animated: true)
+            }
+        }
+        
+        messageTextField.text = ""
+    }
+    
+    @IBAction func SimulateResponse(_ sender: UIBarButtonItem) {
+        
+        messageManager.sendMessage(message: "What up dude?", isSending: false)
+        
+        collectionView.reloadData {
+            self.repositionCollectionView(animated: true)
+        }
+        
+    }
+    
     
     //MARK: - CollectionView functions
     
@@ -86,15 +115,18 @@ class ConversationVC: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MessageCell", for: indexPath) as? MessageCell {
             
-            cell.message = messages[indexPath.row]
-            
-            if let message = messages[indexPath.row].message {
+            if let message = messageManager.messages?[indexPath.row] {
+                
+                cell.message = message
                 
                 let maxWidth = view.frame.width * 2.0 / 3.0
                 
-                let widthAndHeight = message.dimmensionsWithMaximumWidth(maxWidth: maxWidth, font: messageFont)
+                if let widthAndHeight = message.message?.dimmensionsWithMaximumWidth(maxWidth: maxWidth, font: messageFont) {
+                    
+                    cell.drawMessageBubble(width: widthAndHeight.width, height: widthAndHeight.height + 20, font: messageFont)
+                    
+                }
                 
-                cell.drawMessageBubble(width: widthAndHeight.width, height: widthAndHeight.height + 20, font: messageFont)
             }
             
             return cell
@@ -106,14 +138,19 @@ class ConversationVC: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return messages.count
+        
+        if let count = messageManager.messages?.count {
+            return count
+        }
+        
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let width = self.view.frame.width
         
-        if let message = messages[indexPath.row].message {
+        if let message = messageManager.messages?[indexPath.row].message {
             
             let maxWidth = view.frame.width * 2.0 / 3.0
             
@@ -135,47 +172,21 @@ class ConversationVC: UIViewController, UICollectionViewDelegate, UICollectionVi
     //MARK: - Private functions
     private func setKeyboardObservers() {
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.handleKeyboardNotification(notification:)), name: Notification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.handleKeyboardNotification), name: Notification.Name.UIKeyboardWillShow, object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.handleKeyboardNotification(notification:)), name: Notification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.handleKeyboardNotification), name: Notification.Name.UIKeyboardWillHide, object: nil)
         
     }
     
-    private func repositionCollectionView() {
+    private func repositionCollectionView(animated: Bool) {
         
         var indexPath = IndexPath(row: 0, section: 0)
         
-        if messages.count > 0 {
-            indexPath = IndexPath(row: messages.count - 1, section: 0)
+        if let count = messageManager.messages?.count, count > 0 {
+            indexPath = IndexPath(row: count - 1, section: 0)
+            
+            collectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.bottom, animated: animated)
         }
-        
-        collectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.bottom, animated: true)
-        
-    }
-    
-    private func populateMessages() {
-        
-        let message1 = TestMessage(message: "Hi how are you?", sending: true)
-        let message2 = TestMessage(message: "Good, how about you?", sending: false)
-        let message3 = TestMessage(message: "Purdy good. I went to the store today and ran into one of my friends from high school and he's gotten super fat. Then when I got back in my car it wouldn't start! Can you believe that? What luck, amirite? So anyway I had to get an uber to come get me and take me to auto zone to get a new battery. I tried calling my friend Bill but he never seems to pick up when I call anymore. I have no idea why. It's strange really.", sending: true)
-        let message4 = TestMessage(message: "Dude, I just asked how you were. I didn't ask for your life's story", sending: false)
-        let message5 = TestMessage(message: "I'm sorry. I'm just so lonely T~T", sending: true)
-        let message6 = TestMessage(message: "I think I know why Bill doesn't answer anymore.", sending: false)
-        let message7 = TestMessage(message: "What's that supposed to mean?", sending: true)
-        let message8 = TestMessage(message: "Hello?", sending: true)
-        let message9 = TestMessage(message: "Don't ignore me!", sending: true)
-        let message10 = TestMessage(message: "I know where you live!!!", sending: true)
-        
-        messages.append(message1)
-        messages.append(message2)
-        messages.append(message3)
-        messages.append(message4)
-        messages.append(message5)
-        messages.append(message6)
-        messages.append(message7)
-        messages.append(message8)
-        messages.append(message9)
-        messages.append(message10)
     }
 }
 

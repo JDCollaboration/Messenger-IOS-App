@@ -23,11 +23,11 @@ class MessageCell: UICollectionViewCell {
     //very light gray color
     private let RECEIVING_COLOR = UIColor(displayP3Red: 235.0/255.0, green: 235.0/255.0, blue: 241.0/255.0, alpha: 1.0)
     
-    private var _message: TestMessage!
+    private var _message: Message!
     
-    var message: TestMessage {
+    var message: Message {
         get {
-            return _message ?? TestMessage(message: "", sending: true)
+            return _message
         } set {
             _message = newValue
         }
@@ -59,7 +59,7 @@ class MessageCell: UICollectionViewCell {
         textView.font = font
         textView.text = _message.message
         
-        if _message.sending! {
+        if _message.isSending {
             
             view.frame = CGRect(x: totalWidth - width - EXTRA_PADDING - INSET_FROM_BUBBLE - INSET_FROM_SIDES - INSET_FROM_SIDES, y: 0, width: width + INSET_FROM_SIDES + INSET_FROM_BUBBLE +  EXTRA_PADDING, height: height)
             

@@ -161,7 +161,6 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ofc-RT-Q14">
                             <connections>
-                                <action selector="addButtonPressed:" destination="BYZ-38-t0r" id="u1n-HC-FjT"/>
                                 <segue destination="dHe-W1-0Ri" kind="presentation" id="0mi-sc-jAS"/>
                             </connections>
                         </barButtonItem>
@@ -218,6 +217,9 @@
                                         <state key="normal" title="Send">
                                             <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="sendButtonPressed:" destination="AMO-ZT-pfa" eventType="touchUpInside" id="REV-ur-RGt"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -266,9 +268,16 @@
                             <constraint firstItem="sCI-ut-bbH" firstAttribute="top" secondItem="rpx-TT-A0H" secondAttribute="bottom" id="v31-Ih-g3x"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="CJH-wP-VZr"/>
+                    <navigationItem key="navigationItem" title="Title" id="CJH-wP-VZr">
+                        <barButtonItem key="rightBarButtonItem" title="Respond" id="V6A-YR-7Xa">
+                            <connections>
+                                <action selector="SimulateResponse:" destination="AMO-ZT-pfa" id="Sa9-Nc-Leh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="rpx-TT-A0H" id="fos-Qb-PsC"/>
+                        <outlet property="messageTextField" destination="Dac-A1-Pic" id="bge-Y2-jMj"/>
                         <outlet property="textViewBottomLayoutConstraint" destination="jCg-dv-DA8" id="QX8-gy-pj9"/>
                     </connections>
                 </viewController>

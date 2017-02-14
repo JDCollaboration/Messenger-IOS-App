@@ -12,6 +12,8 @@ import CoreData
 class AddContactVC: UIViewController {
     
     @IBOutlet weak var contactName: UITextField!
+    
+    let contactManager = ContactManager.sharedInstance
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,12 +30,8 @@ class AddContactVC: UIViewController {
             
             let newContact = Contact(context: context)
              newContact.name = name
-             
-             do {
-                try context.save()
-             } catch let err as NSError {
-                print(err.debugDescription)
-             }
+            
+            contactManager.addContact(contact: newContact)
         }
         
         self.dismiss(animated: true, completion: nil)
