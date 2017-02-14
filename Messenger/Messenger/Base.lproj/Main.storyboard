@@ -69,6 +69,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomButtonConstraint" destination="SSS-RF-QKK" id="Wgk-aH-bdM"/>
                         <outlet property="contactName" destination="0jZ-xF-qLm" id="sbz-or-8ZX"/>
                     </connections>
                 </viewController>
