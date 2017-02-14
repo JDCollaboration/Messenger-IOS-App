@@ -57,6 +57,7 @@ class MessageCell: UICollectionViewCell {
         textView.backgroundColor = UIColor.clear
         
         textView.font = font
+        textView.isEditable = false
         textView.text = _message.message
         
         if _message.isSending {
