@@ -21,29 +21,29 @@ class ContactManager: NSObject, NSFetchedResultsControllerDelegate {
         if _contacts == nil {
             _ = getContacts()
         }
-        
-        return _contacts != nil ? _contacts.count: 0
+
+        return _contacts != nil ? _contacts.count : 0
     }
     
     var contactController: NSFetchedResultsController<Contact>! {
         
         if controller == nil {
-            fetchContacts()
+            _ = getContacts()
         }
         
         return controller
     }
     
-    func getContacts() -> [Contact] {
+    func getContacts() -> [Contact]? {
         
         fetchContacts()
         
-        if let contacts = controller.fetchedObjects, contacts.count > 0 {
+        if let contacts = controller.fetchedObjects {
             _contacts = contacts
             return _contacts
         }
         
-        return [Contact]()
+        return nil
     }
     
     func getContact(at: IndexPath) -> Contact {
@@ -67,11 +67,10 @@ class ContactManager: NSObject, NSFetchedResultsControllerDelegate {
         
         do {
             try context.save()
+            _ = getContacts()
         } catch let err as NSError {
             print(err.debugDescription)
         }
-        
-        _ = getContacts()
     }
     
     func deleteContact(at: IndexPath) {
@@ -85,11 +84,10 @@ class ContactManager: NSObject, NSFetchedResultsControllerDelegate {
         
         do {
             try context.save()
+            _ = getContacts()
         } catch let err as NSError {
             print(err.debugDescription)
         }
-        
-        _ = getContacts()
     }
     
     private func fetchContacts() {
@@ -108,9 +106,8 @@ class ContactManager: NSObject, NSFetchedResultsControllerDelegate {
         
         do {
             try controller.performFetch()
-        } catch let err {
-            _contacts = [Contact]()
-            print(err)
+        } catch let err as NSError {
+            print(err.debugDescription)
         }
     }
     
