@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreData
 
 class ConversationVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
